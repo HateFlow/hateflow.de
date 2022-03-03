@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@300;500&display=swap');
+p{
+    font-family: 'Lexend', sans-serif;
+    font-size: 3em;
+    text-align: center;
+    top: 40%;
+    position: fixed;
+    width: 100vw;
+    margin: 0;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    color: white;
+}
+
+@keyframes gradient-move {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+div {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate3d(-50%, -50%, 0);
+  z-index: -1;
+}
+
+body {
+    background-color: #3E1873;
+}
+
+.button {
+  border-radius: 50em;
+  padding: 1em 3em;
+  line-height: 1.6em;
+  overflow: hidden;
+  font-family: "azo-sans-web", sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  transition: 0.3s cubic-bezier(0.34, 0.01, 0.35, 0.98), opacity 0.5s;
+  position: relative;
+  display: inline-block;
+  box-shadow: inset 0px 0px 0px 2px #8b4bc4;
+  color: #8b4bc4;
+  font-size: 1.2em;
+  overflow: hidden;
+}
+.button:before {
+  transition: 1.5s cubic-bezier(0.34, 0.01, 0.35, 0.98);
+  overflow: hidden;
+  z-index: -1;
+  opacity: 0;
+  background: linear-gradient(270deg, #bb80ee, #8b4bc4, #a46cd4);
+  animation: gradient-move 1s ease infinite;
+  background-size: 2000% 2000%;
+  content: "";
+  border-radius: 50em;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0;
+}
+.button:after {
+  content: attr(data-title);
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  text-align: center;
+  transform: translate3d(0, -250%, 0);
+  transition: opacity 0.5s cubic-bezier(0.34, 0.01, 0.35, 0.98) 0.1s, transform 0s 0.6s;
+  opacity: 0;
+  color: rgba(0, 0, 0, 0.4);
+}
+.button span {
+  display: inline-block;
+  transition: opacity 1.5s cubic-bezier(0.34, 0.01, 0.35, 0.98) 0.5s;
+  opacity: 1;
+}
+.button:hover, .button:focus, .button:active {
+  box-shadow: inset 0px 0px 0px 2px rgba(0, 0, 0, 0);
+  color: rgba(0, 0, 0, 0.4);
+}
+.button:hover:before, .button:focus:before, .button:active:before {
+  opacity: 1;
+  transition: 0.3s cubic-bezier(0.34, 0.01, 0.35, 0.98);
+}
+.button:hover span, .button:focus span, .button:active span {
+  transform: translate3d(0, 150%, 0);
+  transition: transform 0.5s cubic-bezier(1, 0, 0, 1), opacity 0s 0.5s;
+  opacity: 0;
+}
+.button:hover:after, .button:focus:after, .button:active:after {
+  transform: translate3d(0, -50%, 0);
+  transition: transform 0.5s cubic-bezier(1, 0, 0, 1) 0.1s;
+  opacity: 1;
+}

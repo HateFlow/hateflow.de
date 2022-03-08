@@ -1,4 +1,0 @@
-[submodule "docs"]
-	path = docs
-	url = https://github.com/hateflow/hf-docs
-	branch = gh-pages

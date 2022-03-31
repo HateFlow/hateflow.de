@@ -3915,3 +3915,8 @@ header * {
 }
 
 
+@media screen and (max-width: 1152px) {
+	.content > section > header > * {
+    		color: #000;
+	}
+}
